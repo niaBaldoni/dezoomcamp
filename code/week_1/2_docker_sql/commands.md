@@ -1,6 +1,6 @@
-# Individual containers
+# Individual Docker Containers
 
-## Build the server container
+## Build the Postgres Server Container
 ```bash
 winpty docker run -it \
     -e POSTGRES_USER="root" \
@@ -13,19 +13,19 @@ winpty docker run -it \
 
 ```
 
-## Build the client container
+## Build the Client Container
 ```bash
 winpty pgcli -h localhost -p 5432 -u root -d ny_taxi
 ```
 
-# Network of containers
+# Network of Docker Containers
 
-## Build the network
+## Set Up the Network
 ```bash
 winpty docker network create pg-network
 ```
 
-## Run the database in the network
+## Build the Postgres Server in the Network
 ```bash
 winpty docker run -it \
     -e POSTGRES_USER="root" \
@@ -38,7 +38,7 @@ winpty docker run -it \
     postgres:13
 ```
 
-## Run pgAdmin in the network
+## Run pgAdmin in the Network
 ```bash
 winpty docker run -it \
     -e PGADMIN_DEFAULT_EMAIL="admin@admin.com" \
@@ -49,9 +49,9 @@ winpty docker run -it \
     dpage/pgadmin4
 ```
 
-# Dockerizing the ingestion script
+# Dockerizing the Ingestion Script
 
-## Testing out the script
+## Testing out the Script
 ```bash
     URL="https://raw.githubusercontent.com/niaBaldoni/dezoomcamp/main/code/week_1/2_docker_sql/yellow_tripdata_2021-01.parquet"
 
@@ -65,12 +65,12 @@ winpty docker run -it \
         --url=${URL}
 ```
 
-## Dockerizing the script
+## Dockerizing the Script
 ```bash
     docker build -t taxi_ingest:v001 .
 ```
 
-## Docker container
+## Docker Container for the Script
 ```bash
     URL="https://raw.githubusercontent.com/niaBaldoni/dezoomcamp/main/code/week_1/2_docker_sql/yellow_tripdata_2021-01.parquet"
 
@@ -84,4 +84,13 @@ winpty docker run -it \
             --db=ny_taxi \
             --table-name=yellow_taxi_trips \
             --url=${URL}
+```
+
+# Docker Compose
+
+## Launch Docker Compose
+(Note: we need a [.yaml config file](docker-compose.yaml) in the same folder we're running the command in)
+
+```bash
+    docker-compose up
 ```
