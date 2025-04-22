@@ -4,14 +4,14 @@ This folder contains all the notes I'm taking as I progress through the online b
 
 ## Module 1: Containerization and Infrastructure as Code
 
-### [Ingesting NY Taxi Data to Postgres](week_1/1.2.2_Ingesting_NY_Taxi_Data_to_Postgres.md)
+In the first half of this module, we start to use and understand Docker. We begin by setting up a basic ingestion pipeline to load New York taxi data into a Postgres database, connecting to it via pgAdmin to explore the ingested data. To streamline the process, we refactor the Jupyter Notebook into a Python script, which we then Dockerize to ensure portability and reproducibility. Finally, we simplify infrastructure management by using Docker Compose — allowing us to define and orchestrate both Postgres and pgAdmin in a single configuration file.
 
-Setting up a server, a client, and a pipeline for data ingestion
+### Table of Contents [(detailed table of contents here)](week_1/README.md)
 
-### [Connecting pgAdmin and Postgres](week_1/1.2.3_Connecting_pgAdmin_and_Postgres.md)
+- [Ingesting NY Taxi Data to Postgres](week_1/1.2.2_Ingesting_NY_Taxi_Data_to_Postgres.md)
 
-Querying the data, pgAdmin, Docker containers, Docker Network
+- [Connecting pgAdmin and Postgres](week_1/1.2.3_Connecting_pgAdmin_and_Postgres.md)
 
-### [Dockerizing the Ingestion Script](week_1/1.2.4_Dockerizing_the_Ingestion_Script.md)
+- [Dockerizing the Ingestion Script](week_1/1.2.4_Dockerizing_the_Ingestion_Script.md)
 
-Refactoring the Jupyter Notebook into a Python script, and then dockerizing the script
+- [Running Postgres and pgAdmin with Docker-Compose](1.2.5_Docker-Compose.md)
