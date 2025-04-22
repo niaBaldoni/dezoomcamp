@@ -11,3 +11,7 @@ Setting up a server, a client, and a pipeline for data ingestion
 ### [Connecting pgAdmin and Postgres](week_1/1.2.3_Connecting_pgAdmin_and_Postgres.md)
 
 Querying the data, pgAdmin, Docker containers, Docker Network
+
+### [Dockerizing the Ingestion Script](week_1/1.2.4_Dockerizing_the_Ingestion_Script.md)
+
+Refactoring the Jupyter Notebook into a Python script, and then dockerizing the script

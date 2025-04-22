@@ -18,7 +18,7 @@ winpty docker run -it \
 winpty pgcli -h localhost -p 5432 -u root -d ny_taxi
 ```
 
-# Network
+# Network of containers
 
 ## Build the network
 ```bash
@@ -47,4 +47,41 @@ winpty docker run -it \
     --network=pg-network \
     --name pgadmin \
     dpage/pgadmin4
+```
+
+# Dockerizing the ingestion script
+
+## Testing out the script
+```bash
+    URL="https://raw.githubusercontent.com/niaBaldoni/dezoomcamp/main/code/week_1/2_docker_sql/yellow_tripdata_2021-01.parquet"
+
+    python pipeline_ny_taxi.py \
+        --user=root \
+        --password=root \
+        --host=localhost \
+        --port=5432 \
+        --db=ny_taxi \
+        --table-name=yellow_taxi_trips \
+        --url=${URL}
+```
+
+## Dockerizing the script
+```bash
+    docker build -t taxi_ingest:v001 .
+```
+
+## Docker container
+```bash
+    URL="https://raw.githubusercontent.com/niaBaldoni/dezoomcamp/main/code/week_1/2_docker_sql/yellow_tripdata_2021-01.parquet"
+
+    winpty docker run -it \
+        --network=pg-network \
+        taxi_ingest:v001 \
+            --user=root \
+            --password=root \
+            --host=pg-database \
+            --port=5432 \
+            --db=ny_taxi \
+            --table-name=yellow_taxi_trips \
+            --url=${URL}
 ```
