@@ -103,6 +103,8 @@ I verified this by successfully connecting pgAdmin to PostgreSQL using these cre
 
 ### Answer
 
+(Note: the code that I used to load the taxi data into the database and obtain answers 3-6 can be found in the `ingest_data.py` file)
+
 We write the query
 
 ```SQL
