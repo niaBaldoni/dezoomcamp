@@ -14,4 +14,4 @@ In the first half of this module, we start to use and understand Docker. We begi
 
 - [Dockerizing the Ingestion Script](week_1/1.2.4_Dockerizing_the_Ingestion_Script.md)
 
-- [Running Postgres and pgAdmin with Docker-Compose](1.2.5_Docker-Compose.md)
+- [Running Postgres and pgAdmin with Docker-Compose](week_1/1.2.5_Docker-Compose.md)
