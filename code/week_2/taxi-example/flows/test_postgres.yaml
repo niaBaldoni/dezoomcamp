@@ -1,0 +1,12 @@
+id: test_postgres
+namespace: zoomcamp
+
+tasks:
+  - id: test_connection
+    type: io.kestra.plugin.jdbc.postgresql.Query
+    url: jdbc:postgresql://pgdatabase:5432/ny_taxi
+    username: root
+    password: root
+    sql: |
+      SELECT version();
+    fetchType: STORE
