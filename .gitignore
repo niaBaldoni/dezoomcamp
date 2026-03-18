@@ -33,3 +33,5 @@ credentials/
 # python noise
 __pycache__/
 .venv/
+
+code/week_4/SETUP_INSTRUCTIONS.md
